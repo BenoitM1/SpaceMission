@@ -1,0 +1,3 @@
+<record id="group_odoo_space_mission_admin" model="res.groups">
+    <field name="name">Odoo_space_mission / Admin</field>
+</record>

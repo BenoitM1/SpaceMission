@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="myfirstmodule.list">
+      <field name="name">spaceship list</field>
+      <field name="model">myfirstmodule.spaceship</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="crew_capacity"/>
+          <field name="fuel_type"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="myfirstmodule.spaceship_action_window">
+      <field name="name">myfirstmodule spaceship window</field>
+      <field name="res_model">myfirstmodule.spaceship</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type='html'>
+        <p class="o_view_nocontent_smiling_face">
+        Construis ton premier vaisseau !
+        </p>
+      </field>
+    </record>
+
+    <menuitem name="myfirstmodule" id="myfirstmodule.spaceship_menu_root"/>
+    <menuitem name="Menu 1" id="myfirstmodule.menu_1" parent="myfirstmodule.spaceship_menu_root" action="myfirstmodule.spaceship_action_window"/>
+
+  </data>
+</odoo>

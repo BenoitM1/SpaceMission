@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <record id="myfirstmodule.form" model="ir.ui.view">
+            <field name="name">mission form</field>
+            <field name="model">myfirstmodule.mission</field>
+            <field name="arch" type="xml">
+                <form string="Mission">
+                    <group>
+                        <field name="name"/>    
+                        <field name="launch_date"/>
+                        <field name="return_date"/>
+                        <field name="spaceship_id"/>
+                        <field name="crew_ids" widget="many2many_tags"/> 
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="myfirstmodule.mission_action_window">
+            <field name="name">myfirstmodule mission window</field>
+            <field name="res_model">myfirstmodule.mission</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type='html'>
+                <p class="o_view_nocontent_smiling_face">
+                Prepare ta premiere mission !
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="myfirstmodule" id="myfirstmodule.mission_menu_root"/>
+        <menuitem name="Menu 1" id="myfirstmodule.menu_1" parent="myfirstmodule.mission_menu_root" action="myfirstmodule.mission_action_window"/>
+
+    </data>
+</odoo>
